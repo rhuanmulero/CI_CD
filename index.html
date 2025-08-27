@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Enzo Fonseca - O Mais Temido</title>
+  <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Roboto+Mono&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: radial-gradient(#0b0b0b, #000000);
+      color: #e63946;
+      font-family: 'Roboto Mono', monospace;
+      overflow-x: hidden;
+    }
+
+    .container {
+      padding: 60px 30px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    h1 {
+      font-family: 'Creepster', cursive;
+      font-size: 5rem;
+      color: #ff0000;
+      text-align: center;
+      text-shadow: 0 0 20px red;
+      margin-bottom: 20px;
+    }
+
+    #typewriter {
+      font-size: 1.5rem;
+      color: #ffffff;
+      border-left: 2px solid red;
+      white-space: nowrap;
+      overflow: hidden;
+      width: 0;
+      animation: typing 5s steps(50, end) forwards, blink 1s step-end infinite;
+    }
+
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+
+    @keyframes blink {
+      0%, 100% { border-color: transparent }
+      50% { border-color: red }
+    }
+
+    section {
+      margin-top: 60px;
+      background: rgba(255, 0, 0, 0.05);
+      padding: 30px;
+      border-left: 5px solid red;
+      box-shadow: 0 0 15px red;
+      border-radius: 5px;
+    }
+
+    section h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      color: #ff4d4d;
+    }
+
+    section p {
+      font-size: 1.2rem;
+      line-height: 1.8;
+      color: #ddd;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 100px;
+      font-size: 1rem;
+      color: #888;
+    }
+
+    .bg-skull {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('/Captura de tela 2025-08-27 111606.png');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      opacity: 0.03;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .glitch {
+      color: red;
+      font-size: 2rem;
+      position: relative;
+      animation: glitch 1s infinite;
+    }
+
+    @keyframes glitch {
+      0% { text-shadow: 2px 0 red, -2px 0 blue; }
+      25% { text-shadow: -2px 0 lime, 2px 0 purple; }
+      50% { text-shadow: 2px 0 yellow, -2px 0 cyan; }
+      75% { text-shadow: -2px 0 orange, 2px 0 pink; }
+      100% { text-shadow: 2px 0 red, -2px 0 blue; }
+    }
+
+    /* IMAGEM DO ENZO */
+    #enzo-image {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.95);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 2s ease;
+      z-index: 9999;
+    }
+
+    #enzo-image img {
+      max-width: 60%;
+      height: auto;
+      box-shadow: 0 0 40px red;
+      transform: scale(0.8);
+      transition: transform 2s ease;
+    }
+
+    #enzo-image.show {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    #enzo-image.show img {
+      transform: scale(1);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Fundo com caveira transparente -->
+  <div class="bg-skull"></div>
+
+  <div class="container">
+    <h1>Enzo Fonseca</h1>
+    <div id="typewriter">O maior assassino de todos os tempos...</div>
+
+    <section>
+      <h2>⚠️ Perfil Psicológico</h2>
+      <p>
+        Enzo Fonseca não sente remorso. Ele observa, estuda, executa. Seu olhar é vazio, mas sua mente é afiada como uma lâmina. 
+        Dizem que ele aparece nas sombras, onde menos se espera... e quando se nota, é tarde demais.
+      </p>
+    </section>
+
+    <section>
+      <h2>📜 Histórico Tenebroso</h2>
+      <p>
+        Desde os 12 anos, Enzo já mostrava sinais de uma mente perturbada. Aos 17, desapareceu da escola — e reapareceu nos jornais. 
+        As autoridades tentaram capturá-lo, mas nunca conseguiram sequer chegar perto. 
+        Seu nome virou lenda, e sua presença, um presságio de morte.
+      </p>
+    </section>
+
+    <section>
+      <h2>🩸 Última aparição</h2>
+      <p class="glitch">
+        "Ele foi visto... perto de VOCÊ."
+      </p>
+    </section>
+
+    <footer>
+      &copy; 2025 - Arquivos Secretos de Enzo Fonseca
+    </footer>
+  </div>
+
+  <!-- IMAGEM DE ENZO APARECENDO -->
+  <div id="enzo-image">
+    <img src="/Captura de tela 2025-08-27 111606.png" alt="Enzo Fonseca" />
+  </div>
+
+  <script>
+    // Glitch aleatório no título
+    setInterval(() => {
+      document.querySelector('h1').style.transform = `translate(${(Math.random() - 0.5) * 5}px, ${(Math.random() - 0.5) * 5}px)`;
+    }, 100);
+
+  </script>
+</body>
+</html>
